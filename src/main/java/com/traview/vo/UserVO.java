@@ -2,7 +2,6 @@ package com.traview.vo;
 
 import org.springframework.stereotype.Component;
 
-//@Data
 @Component
 public class UserVO {
 
@@ -77,5 +76,10 @@ public class UserVO {
 	public void setUpdateDate(String updateDate) {
 		this.updateDate = updateDate;
 	}
-	
+	@Override
+	public String toString() {
+		return "UserVO [userId=" + userId + ", userPw=" + userPw + ", userNm=" + userNm + ", nickname=" + nickname
+				+ ", birthday=" + birthday + ", gender=" + gender + ", email=" + email + ", phone=" + phone
+				+ ", createDate=" + createDate + ", updateDate=" + updateDate + "]";
+	}
 }
