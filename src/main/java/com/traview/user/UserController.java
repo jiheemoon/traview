@@ -9,11 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.traview.vo.UserVO;
+
 @Controller
-@RequestMapping(value = "/user")
 public class UserController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(UserController.class);
@@ -21,11 +21,17 @@ public class UserController {
 	@Autowired
     private UserService userService;
     
-	@RequestMapping(value = "/signUp", method = RequestMethod.POST)
-	public @ResponseBody UserVO sign_up(HttpServletRequest request, HttpServletResponse response, @RequestBody UserVO userVO) throws Exception {
+	@RequestMapping(value = "/user/signUp")
+	public @ResponseBody UserVO sign_up(HttpServletRequest request, HttpServletResponse response, @RequestBody UserVO userVO) {
 		
-		logger.info(userVO.toString());
-		
+		try {
+			
+			logger.info(userVO.toString());
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			System.out.println("왔다감");
+		}
 		
 		return userVO;
 	}

@@ -1,5 +1,9 @@
-package com.traview.user;
+package com.traview.vo;
 
+import org.springframework.stereotype.Component;
+
+//@Data
+@Component
 public class UserVO {
 
 	private String userId;
