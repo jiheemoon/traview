@@ -1,10 +1,10 @@
 package com.traview.user;
 
 import org.apache.ibatis.session.SqlSession;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
+import com.traview.vo.UserVO;
 
 @Repository
 public class UserDAO {
@@ -14,8 +14,8 @@ public class UserDAO {
 	
 	private final String NAMESPACE = "mapper.user.";
 	
-	public String selectTime() throws Exception {
-		return sqlSession.selectOne(NAMESPACE + "selectTime");
+	public int insertUser(UserVO userVO) {
+		return sqlSession.insert(NAMESPACE + "insertUser", userVO);
 	}
 	
 }

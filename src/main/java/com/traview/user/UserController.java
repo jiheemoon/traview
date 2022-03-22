@@ -28,6 +28,7 @@ public class UserController {
 		
 		try {
 			logger.info(userVO.toString());
+			int result = userService.insertUser(userVO);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

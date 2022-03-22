@@ -24,8 +24,8 @@
         <property name="configLocation" value="classpath:mybatis-config.xml"/>
         <property name="mapperLocations">
         	<list>
-        		<value>classpath:mappers/home.xml</value>
-        		<value>classpath:mappers/user.xml</value>
+        		<value>classpath:mappers/homeMapper.xml</value>
+        		<value>classpath:mappers/userMapper.xml</value>
         	</list>
         </property>
     </bean>
