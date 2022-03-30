@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="mapper.user">
+<mapper namespace="com.traview.user">
 
-	<insert id="insertUser" parameterType="com.traview.vo.UserVO">
+	<insert id="insertUser" parameterType="UserVO">
 		INSERT INTO USER (
 			USER_ID,
 			USER_PW,
@@ -25,6 +25,53 @@
 			CURRENT_TIMESTAMP
 		)
 	</insert>
+	
+	<update id="updateUser" parameterType="UserVO">
+		UPDATE USER 
+		SET <if test="@common.Function@isNotEmpty(userPw)">
+			USER_PW=#{userPw},</if><if test="@common.Function@isNotEmpty(userNm)">
+			USER_NM=#{userNm},</if><if test="@common.Function@isNotEmpty(nickname)">
+			NICKNAME=#{nickname},</if><if test="@common.Function@isNotEmpty(birthday)">
+			BIRTHDAY=#{birthday},</if><if test="@common.Function@isNotEmpty(gender)">
+			GENDER=#{gender},</if><if test="@common.Function@isNotEmpty(email)">
+			EMAIL=#{email},</if><if test="@common.Function@isNotEmpty(phone)">
+			PHONE=#{phone},</if>
+			UPDATE_DATE=CURRENT_TIMESTAMP
+		WHERE USER_ID=#{userId}
+	</update>
+	
+	<delete id="deleteUser" parameterType="UserVO">
+		DELETE 
+		FROM USER 
+		WHERE USER_ID = #{userId}
+	</delete>
+	
+	<select id="selectUser" parameterType="UserVO" resultType="UserVO"> /* selectUser userMapper.xml */
+		SELECT USER_ID,
+			USER_PW,
+			USER_NM,
+			NICKNAME,
+			BIRTHDAY,
+			GENDER,
+			EMAIL,
+			PHONE,
+			CREATE_DATE
+		FROM USER 
+		WHERE USER_ID = #{userId}
+	</select>
+	
+	<select id="selectUserList" parameterType="UserVO" resultType="UserVO"> /* selectUserList userMapper.xml */
+		SELECT USER_ID,
+			USER_PW,
+			USER_NM,
+			NICKNAME,
+			BIRTHDAY,
+			GENDER,
+			EMAIL,
+			PHONE,
+			CREATE_DATE
+		FROM USER 
+	</select>
 	
 </mapper>
         

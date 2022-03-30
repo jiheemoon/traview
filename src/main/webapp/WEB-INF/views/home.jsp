@@ -11,7 +11,9 @@
 
 <P>  The time on the server is ${serverTime}. </P>
 
-<button id="test">test</button>
+<button id="signUp">user/signUp</button>
+<button id="signIn">user/signIn</button>
+<button id="updateUser">user/updateUser</button>
 <span id="result"></span>
 
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
@@ -23,7 +25,7 @@
 		userNm : 'g',
 	}));
 	
-	$('#test').click(function () {
+	$('#signUp').click(function () {
 		$.ajax({
 			url : "/traview/user/signUp",
 	        type		: "POST",
@@ -48,6 +50,56 @@
             }
 		});
 	});
+
+	$('#signIn').click(function () {
+		$.ajax({
+			url : "/traview/user/signIn",
+	        type		: "POST",
+	        dataType	: "json",
+	        contentType : "application/json",
+			data : JSON.stringify({
+				userId : 'g',
+			}),
+			success : function(a, b) {
+				console.log(a);
+				console.log(b);
+			},
+			error : function(a, b, c){
+				console.log(a);
+				console.log(b);
+				console.log(c);
+			},
+            done : function(e) {
+				console.log(e);
+            }
+		});
+	});
+
+	$('#updateUser').click(function () {
+		$.ajax({
+			url : "/traview/user/signIn",
+	        type		: "POST",
+	        dataType	: "json",
+	        contentType : "application/json",
+			data : JSON.stringify({
+				userId : 'g',
+				userNm : 'jihee',
+			}),
+			success : function(a, b) {
+				console.log(a);
+				console.log(b);
+			},
+			error : function(a, b, c){
+				console.log(a);
+				console.log(b);
+				console.log(c);
+			},
+            done : function(e) {
+				console.log(e);
+            }
+		});
+	});
+	
 </script>
 
 </body>

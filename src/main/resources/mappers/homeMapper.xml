@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="mapper.home">
+<mapper namespace="com.traview.home">
 
 	<select id="selectTime" resultType="string"> /* selectTime homeMapper.xml */
 		SELECT DATE_FORMAT( now() , '%Y-%m-%d' )

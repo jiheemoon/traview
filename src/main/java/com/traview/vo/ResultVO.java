@@ -6,18 +6,18 @@ import org.springframework.stereotype.Component;
 public class ResultVO {
 
 	/* 결과코드 */
-	private String resultCode;
+	private int resultCode;
 	/* 결과문자 */
 	private String resultStr;
 	/* 에러문자 */
-	private String errorCode;
+	private int errorCode;
 	/* 에러문자 */
 	private String errorStr;
 	
-	public String getResultCode() {
+	public int getResultCode() {
 		return resultCode;
 	}
-	public void setResultCode(String resultCode) {
+	public void setResultCode(int resultCode) {
 		this.resultCode = resultCode;
 	}
 	public String getResultStr() {
@@ -26,10 +26,10 @@ public class ResultVO {
 	public void setResultStr(String resultStr) {
 		this.resultStr = resultStr;
 	}
-	public String getErrorCode() {
+	public int getErrorCode() {
 		return errorCode;
 	}
-	public void setErrorCode(String errorCode) {
+	public void setErrorCode(int errorCode) {
 		this.errorCode = errorCode;
 	}
 	public String getErrorStr() {

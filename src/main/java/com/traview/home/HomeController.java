@@ -26,7 +26,17 @@ public class HomeController {
 	
 	@Autowired
     private HomeService homeService;
-    		
+  	
+	@RequestMapping("/favicon.ico")
+	public String favicon1() {
+		return "forward:/resources/img/fav.ico";
+	}
+	
+	@RequestMapping("**/favicon.ico")
+	public String favicon2() {
+		return "forward:/resources/img/fav.ico";
+	}
+	
 	@RequestMapping(value = "/")
 	public String home(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
@@ -48,16 +58,16 @@ public class HomeController {
 		return "home";
 	}
 	
-	@ResponseBody 
-	@RequestMapping(value = "/signUp", method = RequestMethod.POST)
-	public UserVO sign_up(@RequestBody UserVO userVO, HttpServletRequest req, HttpServletResponse res) {
-		
-		try {
-			logger.info(userVO.toString());
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-		return userVO;
-	}
+//	@ResponseBody 
+//	@RequestMapping(value = "/signUp", method = RequestMethod.POST)
+//	public UserVO sign_up(@RequestBody UserVO userVO, HttpServletRequest req, HttpServletResponse res) {
+//		
+//		try {
+//			logger.info(userVO.toString());
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//		
+//		return userVO;
+//	}
 }

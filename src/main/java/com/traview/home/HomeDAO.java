@@ -12,7 +12,7 @@ public class HomeDAO {
 	@Autowired
 	private SqlSession sqlSession;
 	
-	private final String NAMESPACE = "mapper.home.";
+	private final String NAMESPACE = "com.traview.home.";
 	
 	public String selectTime() throws Exception {
 		return sqlSession.selectOne(NAMESPACE + "selectTime");
