@@ -11,7 +11,7 @@ public class UserService {
     @Autowired
     protected UserDAO userDAO;
 
-	public int insertUser(UserVO userVO) {
+	public int insertUser(UserVO userVO) throws Exception {
 		return userDAO.insertUser(userVO);
 	}
 }

@@ -14,7 +14,7 @@ public class UserDAO {
 	
 	private final String NAMESPACE = "mapper.user.";
 	
-	public int insertUser(UserVO userVO) {
+	public int insertUser(UserVO userVO) throws Exception {
 		return sqlSession.insert(NAMESPACE + "insertUser", userVO);
 	}
 	

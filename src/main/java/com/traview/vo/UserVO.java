@@ -3,17 +3,27 @@ package com.traview.vo;
 import org.springframework.stereotype.Component;
 
 @Component
-public class UserVO {
-
+public class UserVO extends ResultVO {
+	
+	/* ID */
 	private String userId;
+	/* password */
 	private String userPw;
+	/* 이름 */
 	private String userNm;
+	/* 별명 */
 	private String nickname;
+	/* 생일 */
 	private String birthday;
+	/* 성별 */
 	private String gender;
+	/* 이메일 */
 	private String email;
+	/* 휴대번호 */
 	private String phone;
+	/* 생성일 */
 	private String createDate;
+	/* 수정일 */
 	private String updateDate;
 	
 	public String getUserId() {
@@ -76,10 +86,5 @@ public class UserVO {
 	public void setUpdateDate(String updateDate) {
 		this.updateDate = updateDate;
 	}
-	@Override
-	public String toString() {
-		return "UserVO [userId=" + userId + ", userPw=" + userPw + ", userNm=" + userNm + ", nickname=" + nickname
-				+ ", birthday=" + birthday + ", gender=" + gender + ", email=" + email + ", phone=" + phone
-				+ ", createDate=" + createDate + ", updateDate=" + updateDate + "]";
-	}
+	
 }
