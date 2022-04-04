@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+    
+<!--     <aop:aspectj-autoproxy /> -->
+<!--     <context:annotation-config /> -->
+
+    <!-- component-scan 설정-->
+<!--     <context:component-scan base-package="com.traview"> -->
+<!--         <context:include-filter type="annotation" expression="org.springframework.stereotype.Service"/> -->
+<!--         <context:include-filter type="annotation" expression="org.springframework.stereotype.Repository"/> -->
+<!--         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/> -->
+<!--     </context:component-scan> -->
+
+    <!--  Controller Log Aspect -->
+<!--     <bean id="controllerLogAspect" class="common.aspect.ControllerLogAspect" /> -->
+<!--     <aop:config> -->
+<!--         <aop:aspect id="controllerLogManageAspect" ref="controllerLogAspect"> -->
+<!--             <aop:before pointcut="execution(* com.traview.*.*Controller.*(..))" method="beforeLog" /> -->
+<!--             <aop:after pointcut="execution(* com.traview.*.*Controller.*(..))" method="afterLog" /> -->
+<!--         </aop:aspect> -->
+<!--     </aop:config> -->
+    
+    <!--  DAO Log Aspect -->
+<!--     <bean id="daoLogAspect" class="common.aspect.DaoLogAspect" /> -->
+<!--     <aop:config> -->
+<!--         <aop:aspect id="daoLogManageAspect" ref="daoLogAspect"> -->
+<!--             <aop:before pointcut="execution(* *.*..*DAO.*(..))" method="beforeLog" /> -->
+<!--             <aop:after pointcut="execution(* *.*..*DAO.*(..))" method="afterLog" /> -->
+<!--              &amp;&amp; !execution(* common.global.*..*DAO.*(..)) -->
+<!--         </aop:aspect> -->
+<!--     </aop:config> -->
+    
+</beans>
