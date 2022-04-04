@@ -47,29 +47,30 @@
 	</delete>
 	
 	<select id="selectUser" parameterType="UserVO" resultType="UserVO"> /* selectUser userMapper.xml */
-		SELECT USER_ID,
-			USER_PW,
-			USER_NM,
-			NICKNAME,
-			BIRTHDAY,
-			GENDER,
-			EMAIL,
-			PHONE,
-			CREATE_DATE
+		SELECT USER_ID AS userId,
+			USER_PW AS userPw,
+			USER_NM AS userNm,
+			NICKNAME AS nickname,
+			BIRTHDAY AS birthday,
+			GENDER AS gender,
+			EMAIL AS email,
+			PHONE AS phone,
+			CREATE_DATE AS createDate
 		FROM USER 
-		WHERE USER_ID = #{userId}
+		WHERE USER_ID = #{userId}<if test="@common.Function@isNotEmpty(userPw)">
+			AND USER_PW=#{userPw}</if>
 	</select>
 	
 	<select id="selectUserList" parameterType="UserVO" resultType="UserVO"> /* selectUserList userMapper.xml */
-		SELECT USER_ID,
-			USER_PW,
-			USER_NM,
-			NICKNAME,
-			BIRTHDAY,
-			GENDER,
-			EMAIL,
-			PHONE,
-			CREATE_DATE
+		SELECT USER_ID AS userId,
+			USER_PW AS userPw,
+			USER_NM AS userNm,
+			NICKNAME AS nickname,
+			BIRTHDAY AS birthday,
+			GENDER AS gender,
+			EMAIL AS email,
+			PHONE AS phone,
+			CREATE_DATE AS createDate
 		FROM USER 
 	</select>
 	
