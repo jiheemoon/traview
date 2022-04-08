@@ -36,7 +36,7 @@ import org.slf4j.LoggerFactory;
 
 public class QueryInterceptor implements Interceptor{ // invoke.process충돌 : DAO호출 불가
     
-    private Logger logger = LoggerFactory.getLogger(this.getClass());
+    protected Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Override
     public Object intercept(Invocation invocation) throws Throwable {

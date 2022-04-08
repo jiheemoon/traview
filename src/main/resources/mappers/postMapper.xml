@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.traview.user">
+<mapper namespace="com.traview.post">
 
-	<insert id="insertUser" parameterType="UserVO">
-		INSERT INTO USER (
-			USER_ID,
-			USER_PW,
-			USER_NM,
+	<insert id="insertPost" parameterType="PostVO">
+		INSERT INTO POST (
+			POST_ID,
+			POST_PW,
+			POST_NM,
 			NICKNAME,
 			BIRTHDAY,
 			GENDER,
@@ -26,53 +26,53 @@
 		)
 	</insert>
 	
-	<update id="updateUser" parameterType="UserVO">
-		UPDATE USER 
+	<update id="updatePost" parameterType="PostVO">
+		UPDATE POST 
 		SET <if test="@common.Function@isNotEmpty(userPw)">
-			USER_PW=#{userPw},</if><if test="@common.Function@isNotEmpty(userNm)">
-			USER_NM=#{userNm},</if><if test="@common.Function@isNotEmpty(nickname)">
+			POST_PW=#{userPw},</if><if test="@common.Function@isNotEmpty(userNm)">
+			POST_NM=#{userNm},</if><if test="@common.Function@isNotEmpty(nickname)">
 			NICKNAME=#{nickname},</if><if test="@common.Function@isNotEmpty(birthday)">
 			BIRTHDAY=#{birthday},</if><if test="@common.Function@isNotEmpty(gender)">
 			GENDER=#{gender},</if><if test="@common.Function@isNotEmpty(email)">
 			EMAIL=#{email},</if><if test="@common.Function@isNotEmpty(phone)">
 			PHONE=#{phone},</if>
 			UPDATE_DATE=CURRENT_TIMESTAMP
-		WHERE USER_ID=#{userId}
+		WHERE POST_ID=#{userId}
 	</update>
 	
-	<delete id="deleteUser" parameterType="UserVO">
-		UPDATE USER  
+	<delete id="deletePost" parameterType="PostVO">
+		UPDATE POST  
 		SET USE_YN='N' 
-		WHERE USER_ID = #{userId}
+		WHERE POST_ID = #{userId}
 	</delete>
 	
-	<select id="selectUser" parameterType="UserVO" resultType="UserVO"> /* selectUser userMapper.xml */
-		SELECT USER_ID AS userId,
-			USER_PW AS userPw,
-			USER_NM AS userNm,
+	<select id="selectPost" parameterType="PostVO" resultType="PostVO"> /* selectPost userMapper.xml */
+		SELECT POST_ID AS userId,
+			POST_PW AS userPw,
+			POST_NM AS userNm,
 			NICKNAME AS nickname,
 			BIRTHDAY AS birthday,
 			GENDER AS gender,
 			EMAIL AS email,
 			PHONE AS phone,
 			CREATE_DATE AS createDate
-		FROM USER 
+		FROM POST 
 		WHERE USE_YN='Y'
-			AND USER_ID = #{userId}<if test="@common.Function@isNotEmpty(userPw)">
-			AND USER_PW=#{userPw}</if>
+			AND POST_ID = #{userId}<if test="@common.Function@isNotEmpty(userPw)">
+			AND POST_PW=#{userPw}</if>
 	</select>
 	
-	<select id="selectUserList" parameterType="UserVO" resultType="UserVO"> /* selectUserList userMapper.xml */
-		SELECT USER_ID AS userId,
-			USER_PW AS userPw,
-			USER_NM AS userNm,
+	<select id="selectPostList" parameterType="PostVO" resultType="PostVO"> /* selectPostList userMapper.xml */
+		SELECT POST_ID AS userId,
+			POST_PW AS userPw,
+			POST_NM AS userNm,
 			NICKNAME AS nickname,
 			BIRTHDAY AS birthday,
 			GENDER AS gender,
 			EMAIL AS email,
 			PHONE AS phone,
 			CREATE_DATE AS createDate
-		FROM USER 
+		FROM POST 
 		WHERE USE_YN='Y'
 	</select>
 	

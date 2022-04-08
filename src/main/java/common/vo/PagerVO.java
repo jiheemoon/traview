@@ -1,6 +1,6 @@
-package com.traview.vo;
+package common.vo;
 
-public class PagerVO {
+public class PagerVO extends AbstractVO {
 
     public PagerVO(int totRows, int curPage, int perPage) {
         

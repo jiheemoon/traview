@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class HomeController {
-	
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+
+	protected Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	@Autowired
     private HomeService homeService;

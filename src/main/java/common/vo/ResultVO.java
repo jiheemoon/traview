@@ -1,4 +1,4 @@
-package com.traview.vo;
+package common.vo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ResultVO <T>{
+public class ResultVO <T> extends AbstractVO {
 
 	/* 결과코드 */
 	private int resultCode = 1;
@@ -15,7 +15,7 @@ public class ResultVO <T>{
 	/* 에러문자 */
 	private int errorCode = 1;
 	/* 에러문자 */
-	private String errorStr;
+	private String errorStr = "성공";
 	/* 데이터 */
 	private Object data;
 	/* 데이터리스트 */
@@ -40,6 +40,11 @@ public class ResultVO <T>{
 		this.errorCode = errorCode;
 	}
 	public String getErrorStr() {
+		if(0 < errorCode) {
+			errorStr = "성공";
+		} else if(0 > errorCode) {
+			errorStr = "실패";
+		}
 		return errorStr;
 	}
 	public void setErrorStr(String errorStr) {

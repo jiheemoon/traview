@@ -12,13 +12,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.traview.vo.ResultVO;
 import com.traview.vo.UserVO;
+
+import common.vo.ResultVO;
 
 @Controller
 public class UserController {
 	
-	private Logger logger = LoggerFactory.getLogger(this.getClass());
+	protected Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	@Autowired
     private UserService userService;
@@ -32,8 +33,9 @@ public class UserController {
 		try {
 			resultVO.setErrorCode(userService.insertUser(userVO));
 		} catch (Exception e) {
-			resultVO.setErrorCode(-1);
 			e.printStackTrace();
+			resultVO.setErrorCode(-1);
+			resultVO.setResultStr("이미 존재하는 아이디입니다.");
 		}
 		
 		return resultVO;
@@ -50,7 +52,6 @@ public class UserController {
 		} catch (Exception e) {
 			e.printStackTrace();
 			resultVO.setErrorCode(-1);
-			resultVO.setErrorStr("이미 존재하는 아이디입니다.");
 		}
 		
 		return resultVO;

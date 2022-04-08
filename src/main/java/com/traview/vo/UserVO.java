@@ -2,8 +2,10 @@ package com.traview.vo;
 
 import org.springframework.stereotype.Component;
 
+import common.vo.AbstractVO;
+
 @Component
-public class UserVO {
+public class UserVO extends AbstractVO {
 	
 	/* ID */
 	private String userId;
@@ -13,7 +15,7 @@ public class UserVO {
 	private String userNm;
 	/* 별명 */
 	private String nickname;
-	/* 생일 */
+	/* 생일 8글자 */
 	private String birthday;
 	/* 성별 */
 	private String gender;
@@ -25,6 +27,8 @@ public class UserVO {
 	private String createDate;
 	/* 수정일 */
 	private String updateDate;
+	/* 사용여부 */
+	private String useYn;
 	
 	public String getUserId() {
 		return userId;
@@ -86,10 +90,10 @@ public class UserVO {
 	public void setUpdateDate(String updateDate) {
 		this.updateDate = updateDate;
 	}
-	@Override
-	public String toString() {
-		return "UserVO [userId=" + userId + ", userPw=" + userPw + ", userNm=" + userNm + ", nickname=" + nickname
-				+ ", birthday=" + birthday + ", gender=" + gender + ", email=" + email + ", phone=" + phone
-				+ ", createDate=" + createDate + ", updateDate=" + updateDate + "]";
+	public String getUseYn() {
+		return useYn;
+	}
+	public void setUseYn(String useYn) {
+		this.useYn = useYn;
 	}
 }
