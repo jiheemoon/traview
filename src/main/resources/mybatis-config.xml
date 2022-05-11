@@ -3,13 +3,15 @@
 <configuration>
 
     <typeAliases>
-        <typeAlias type="com.traview.vo.UserVO" alias="UserVO"/>    
+        <typeAlias type="com.traview.vo.UserVO" alias="UserVO"/> 
+        <typeAlias type="com.traview.vo.PostVO" alias="PostVO"/>     
     </typeAliases>
 
-    <mappers>
-        <mapper resource="/mappers/homeMapper.xml" />
-        <mapper resource="/mappers/userMapper.xml" />
-    </mappers>
+<!--     <mappers> -->
+<!--         <mapper resource="/mappers/homeMapper.xml" /> -->
+<!--         <mapper resource="/mappers/userMapper.xml" /> -->
+<!--         <mapper resource="/mappers/postMapper.xml" /> -->
+<!--     </mappers> -->
 
 </configuration>
         

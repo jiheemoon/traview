@@ -39,6 +39,5 @@ public class PostDAO {
 	public List<PostVO> selectPostList(PostVO PostVO) throws Exception {
 		return sqlSession.selectList(NAMESPACE + "selectPostList", PostVO);
 	}
-
 	
 }

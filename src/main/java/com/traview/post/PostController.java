@@ -28,6 +28,7 @@ public class PostController {
 	@RequestMapping(value = "/post/insertPost", method = RequestMethod.POST)
 	public ResultVO<PostVO> post_insertPost(@RequestBody PostVO postVO, HttpServletRequest req, HttpServletResponse res) {
 
+		logger.info("post_selectPostList: "+postVO.toString());
 		ResultVO<PostVO> resultVO = new ResultVO<PostVO>();
 		try {
 			resultVO.setErrorCode(postService.insertPost(postVO));
@@ -76,6 +77,7 @@ public class PostController {
 		ResultVO<PostVO> resultVO = new ResultVO<PostVO>();
 		try {
 			resultVO.setData(postService.selectPost(postVO));
+			System.out.println(resultVO.getData().toString());
 		} catch (Exception e) {
 			e.printStackTrace();
 			resultVO.setErrorCode(-1);
@@ -88,10 +90,11 @@ public class PostController {
 	@RequestMapping(value = "/post/selectPostList", method = RequestMethod.POST)
 	public ResultVO<PostVO> post_selectPostList(@RequestBody PostVO postVO, HttpServletRequest req, HttpServletResponse res) {
 
-		logger.info(postVO.toString());
+		logger.info("post_selectPostList: "+postVO.toString());
 		ResultVO<PostVO> resultVO = new ResultVO<PostVO>();
 		try {
 			resultVO.setDataList(postService.selectPostList(postVO));
+			System.out.println(resultVO.getDataList().toString());
 		} catch (Exception e) {
 			e.printStackTrace();
 			resultVO.setErrorCode(-1);

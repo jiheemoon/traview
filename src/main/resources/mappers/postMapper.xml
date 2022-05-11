@@ -3,77 +3,82 @@
 <mapper namespace="com.traview.post">
 
 	<insert id="insertPost" parameterType="PostVO">
-		INSERT INTO POST (
-			POST_ID,
-			POST_PW,
-			POST_NM,
-			NICKNAME,
-			BIRTHDAY,
-			GENDER,
-			EMAIL,
-			PHONE,
-			CREATE_DATE
-		) VALUES (
-			#{userId},
-			#{userPw},
-			#{userNm},
-			#{nickname},
-			#{birthday},
-			#{gender},
-			#{email},
-			#{phone},
-			CURRENT_TIMESTAMP
-		)
+		INSERT INTO POST(
+			POST_SEQ,
+			POST_INFO_ID,
+			POST_TITLE,
+			POST_CONTENTS,
+			POST_DESCRIPTION,
+			IS_MAIN,
+			CREATE_DATE,
+			CREATE_USER,
+			USE_YN)
+		VALUES(
+			GET_SEQ('POST'),
+			#{postInfoId},
+			#{postTitle},
+			#{postContents},
+			#{postDescription},
+			#{isMain},
+			CURRENT_TIMESTAMP,
+			#{createUser},
+			'Y')
 	</insert>
 	
 	<update id="updatePost" parameterType="PostVO">
 		UPDATE POST 
-		SET <if test="@common.Function@isNotEmpty(userPw)">
-			POST_PW=#{userPw},</if><if test="@common.Function@isNotEmpty(userNm)">
-			POST_NM=#{userNm},</if><if test="@common.Function@isNotEmpty(nickname)">
-			NICKNAME=#{nickname},</if><if test="@common.Function@isNotEmpty(birthday)">
-			BIRTHDAY=#{birthday},</if><if test="@common.Function@isNotEmpty(gender)">
-			GENDER=#{gender},</if><if test="@common.Function@isNotEmpty(email)">
-			EMAIL=#{email},</if><if test="@common.Function@isNotEmpty(phone)">
-			PHONE=#{phone},</if>
-			UPDATE_DATE=CURRENT_TIMESTAMP
-		WHERE POST_ID=#{userId}
+		SET <if test="@common.Function@isNotEmpty(postInfoId)">
+			POST_INFO_ID=#{postInfoId},</if><if test="@common.Function@isNotEmpty(postTitle)">
+			POST_TITLE=#{postTitle},</if><if test="@common.Function@isNotEmpty(postContents)">
+			POST_CONTENTS=#{postContents},</if><if test="@common.Function@isNotEmpty(postDescription)">
+			POST_DESCRIPTION=#{postDescription},</if><if test="@common.Function@isNotEmpty(isMain)">
+			IS_MAIN=#{isMain},</if><if test="@common.Function@isNotEmpty(useYn)">
+			USE_YN=#{useYn},</if>
+			UPDATE_DATE=CURRENT_TIMESTAMP,
+			UPDATE_USER=#{updateUser}
+		WHERE POST_SEQ=#{postSeq}
 	</update>
 	
 	<delete id="deletePost" parameterType="PostVO">
 		UPDATE POST  
 		SET USE_YN='N' 
-		WHERE POST_ID = #{userId}
+		WHERE POST_SEQ=#{postSeq}
 	</delete>
 	
 	<select id="selectPost" parameterType="PostVO" resultType="PostVO"> /* selectPost userMapper.xml */
-		SELECT POST_ID AS userId,
-			POST_PW AS userPw,
-			POST_NM AS userNm,
-			NICKNAME AS nickname,
-			BIRTHDAY AS birthday,
-			GENDER AS gender,
-			EMAIL AS email,
-			PHONE AS phone,
-			CREATE_DATE AS createDate
+		SELECT 
+			POST_SEQ AS postSeq,
+			POST_INFO_ID AS postInfoId,
+			POST_TITLE AS postTitle,
+			POST_CONTENTS AS postContents,
+			POST_DESCRIPTION AS postDescription,
+			IS_MAIN AS isMain,
+			CREATE_DATE AS createDate,
+			CREATE_USER AS createUser,
+			UPDATE_DATE AS updateDate,
+			UPDATE_USER AS updateUser,
+			USE_YN AS useYn
 		FROM POST 
-		WHERE USE_YN='Y'
-			AND POST_ID = #{userId}<if test="@common.Function@isNotEmpty(userPw)">
-			AND POST_PW=#{userPw}</if>
+		WHERE POST_SEQ=#{postSeq}<if test="@common.Function@isNotEmpty(useYn)">
+			AND USE_YN=#{useYn}</if>
 	</select>
 	
 	<select id="selectPostList" parameterType="PostVO" resultType="PostVO"> /* selectPostList userMapper.xml */
-		SELECT POST_ID AS userId,
-			POST_PW AS userPw,
-			POST_NM AS userNm,
-			NICKNAME AS nickname,
-			BIRTHDAY AS birthday,
-			GENDER AS gender,
-			EMAIL AS email,
-			PHONE AS phone,
-			CREATE_DATE AS createDate
+		SELECT  
+			POST_SEQ AS postSeq,
+			POST_INFO_ID AS postInfoId,
+			POST_TITLE AS postTitle,
+			POST_CONTENTS AS postContents,
+			POST_DESCRIPTION AS postDescription,
+			IS_MAIN AS isMain,
+			CREATE_DATE AS createDate,
+			CREATE_USER AS createUser,
+			UPDATE_DATE AS updateDate,
+			UPDATE_USER AS updateUser,
+			USE_YN AS useYn
 		FROM POST 
-		WHERE USE_YN='Y'
+		WHERE 1=1<if test="@common.Function@isNotEmpty(useYn)">
+			AND USE_YN=#{useYn}</if>
 	</select>
 	
 </mapper>

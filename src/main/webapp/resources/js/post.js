@@ -5,9 +5,12 @@
 	        dataType	: "json",
 	        contentType : "application/json",
 			data : JSON.stringify({
-				postId : 'jihee',
-				postPw : 'jihee',
-				postNm : 'jihee',
+				postInfoId : 0,
+				postTitle : '제목',
+				postContents : '내용',
+				postDescription : '',
+				isMain : 'Y',
+				createUser : 'jihee',
 			}),
 			success : function(a, b) {
 				console.log(a);
@@ -31,8 +34,14 @@
 	        dataType	: "json",
 	        contentType : "application/json",
 			data : JSON.stringify({
-				postId : 'g',
-				postNm : 'jihee',
+				postSeq : 1,
+				postInfoId : 0,
+				postTitle : '제목1',
+				postContents : '내용1',
+				postDescription : '설명1',
+				isMain : 'Y',
+				useYn : 'Y',
+				updateUser : 'jihee',
 			}),
 			success : function(a, b) {
 				console.log(a);
@@ -56,8 +65,7 @@
 	        dataType	: "json",
 	        contentType : "application/json",
 			data : JSON.stringify({
-				postId : 'g',
-				postNm : 'jihee',
+				postSeq : 2
 			}),
 			success : function(a, b) {
 				console.log(a);
@@ -81,8 +89,7 @@
 	        dataType	: "json",
 	        contentType : "application/json",
 			data : JSON.stringify({
-				postId : 'g',
-				postPw : 'g',
+				postSeq : 1,
 			}),
 			success : function(a, b) {
 				console.log(a);
@@ -106,7 +113,7 @@
 	        dataType	: "json",
 	        contentType : "application/json",
 			data : JSON.stringify({
-				postId : 'g',
+				useYn : 'Y',
 			}),
 			success : function(a, b) {
 				console.log(a);

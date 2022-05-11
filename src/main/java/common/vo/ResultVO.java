@@ -60,6 +60,6 @@ public class ResultVO <T> extends AbstractVO {
 		return dataList;
 	}
 	public void setDataList(List<T> dataList) {
-		this.dataList.addAll(dataList);
+		this.dataList = dataList;
 	}
 }
