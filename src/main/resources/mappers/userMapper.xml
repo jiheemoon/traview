@@ -43,7 +43,7 @@
 	<delete id="deleteUser" parameterType="UserVO">
 		UPDATE USER  
 		SET USE_YN='N' 
-		WHERE USER_ID = #{userId}
+		WHERE USER_ID=#{userId}
 	</delete>
 	
 	<select id="selectUser" parameterType="UserVO" resultType="UserVO"> /* selectUser userMapper.xml */
@@ -58,9 +58,10 @@
 			CREATE_DATE AS createDate,
 			UPDATE_DATE AS updateDate
 		FROM USER 
-		WHERE USE_YN='Y'
-			AND USER_ID = #{userId}<if test="@common.Function@isNotEmpty(userPw)">
-			AND USER_PW=#{userPw}</if>
+		WHERE 1=1
+			AND USER_ID=#{userId}<if test="@common.Function@isNotEmpty(userPw)">
+			AND USER_PW=#{userPw}</if><if test="@common.Function@isNotEmpty(useYn)">
+			AND USE_YN=#{useYn}</if>
 	</select>
 	
 	<select id="selectUserList" parameterType="UserVO" resultType="UserVO"> /* selectUserList userMapper.xml */
@@ -75,7 +76,8 @@
 			CREATE_DATE AS createDate,
 			UPDATE_DATE AS updateDate
 		FROM USER 
-		WHERE USE_YN='Y'
+		WHERE 1=1<if test="@common.Function@isNotEmpty(useYn)">
+			AND USE_YN=#{useYn}</if>
 	</select>
 	
 </mapper>

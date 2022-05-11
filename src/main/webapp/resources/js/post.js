@@ -10,7 +10,7 @@
 				postContents : '내용',
 				postDescription : '',
 				isMain : 'Y',
-				createUser : 'jihee',
+				createUser : 'jihee'
 			}),
 			success : function(a, b) {
 				console.log(a);
@@ -41,7 +41,7 @@
 				postDescription : '설명1',
 				isMain : 'Y',
 				useYn : 'Y',
-				updateUser : 'jihee',
+				updateUser : 'jihee'
 			}),
 			success : function(a, b) {
 				console.log(a);
@@ -89,7 +89,7 @@
 	        dataType	: "json",
 	        contentType : "application/json",
 			data : JSON.stringify({
-				postSeq : 1,
+				postSeq : 1
 			}),
 			success : function(a, b) {
 				console.log(a);
@@ -113,7 +113,7 @@
 	        dataType	: "json",
 	        contentType : "application/json",
 			data : JSON.stringify({
-				useYn : 'Y',
+				useYn : 'Y'
 			}),
 			success : function(a, b) {
 				console.log(a);

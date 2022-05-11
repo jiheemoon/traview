@@ -7,7 +7,7 @@
 			data : JSON.stringify({
 				userId : 'jihee',
 				userPw : 'jihee',
-				userNm : 'jihee',
+				userNm : 'jihee'
 			}),
 			success : function(a, b) {
 				console.log(a);
@@ -32,7 +32,8 @@
 	        contentType : "application/json",
 			data : JSON.stringify({
 				userId : 'jihee',
-				userPw : 'jihee'
+				userPw : 'jihee',
+				useYn : 'Y'
 			}),
 			success : function(a, b) {
 				console.log(a);
@@ -75,6 +76,30 @@
             }
 		});
 	});
+
+	$('#deleteUser').click(function () {
+		$.ajax({
+			url : "/traview/user/deleteUser",
+	        type		: "POST",
+	        dataType	: "json",
+	        contentType : "application/json",
+			data : JSON.stringify({
+				userId : 'jihee'
+			}),
+			success : function(a, b) {
+				console.log(a);
+				console.log(b);
+			},
+			error : function(a, b, c){
+				console.log(a);
+				console.log(b);
+				console.log(c);
+			},
+            done : function(e) {
+				console.log(e);
+            }
+		});
+	});
 	
 	$('#selectUser').click(function () {
 		$.ajax({
@@ -83,7 +108,8 @@
 	        dataType	: "json",
 	        contentType : "application/json",
 			data : JSON.stringify({
-				userId : 'jihee'
+				userId : 'jihee',
+				useYn : 'Y'
 			}),
 			success : function(a, b) {
 				console.log(a);
@@ -107,7 +133,7 @@
 	        dataType	: "json",
 	        contentType : "application/json",
 			data : JSON.stringify({
-				userId : 'jihee',
+				useYn : 'Y'
 			}),
 			success : function(a, b) {
 				console.log(a);

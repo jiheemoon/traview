@@ -8,12 +8,31 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="shortcut icon" href="resources/img/fav.ico">
 	<title>Home</title>
+    <style>
+    	* {
+    		font-size: x-small;
+    	}
+		textarea {
+			width: 30%;height: 30%;float:right;
+		}
+		table {
+			width: 70%;float:left;border: 1px solid gray;
+      	}
+      	tr:hover {
+			border: 3px solid #878b93;
+			outline: 1px solid #242b3a;
+		}
+		th, td {
+			border: 1px solid gray;
+		}
+    </style>
 </head>
 <body>
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 
 <%-- <P>  The time on the server is ${serverTime}. </P> --%>
-<textarea style="width: 35%; height: 50%;">	
+<!--// 사용자 -->
+<textarea>	
 	/* ID */
 	private String userId;
 	/* password */
@@ -37,14 +56,84 @@
 	/* 사용여부 */
 	private String useYn;
 </textarea>
-<button id="signUp">user/signUp</button>
-<button id="signIn">user/signIn</button>
-<button id="updateUser">user/updateUser</button>
-<button id="selectUser">user/selectUser</button>
-<button id="selectUserList">user/selectUserList</button>
+<table>
+	<tr>
+		<th>사용</th>
+		<th>URL</th>
+		<th>DATA TYPE</th>
+		<th>DATA 필수</th>
+		<th>DATA 필수X</th>
+	</tr>
+	<tr id="signUp">
+		<td>회원가입</td>
+		<td>traview/user/signUp</td>
+		<td>POST</td>
+		<td>
+				userId : 'jihee',
+				userPw : 'jihee',
+				userNm : 'jihee',</td>
+		<td>
+				nickname : '지희',
+				birthday : '19960824',
+				gender : 'F',
+				email : 'jihee@test.com',
+				phone	: '01034785503'</td>
+	</tr>
+	<tr id="signIn">
+		<td>로그인</td>
+		<td>traview/user/signIn</td>
+		<td>POST</td>
+		<td>
+				userId : 'jihee',
+				userPw : 'jihee'</td>
+		<td></td>
+	</tr>
+	<tr id="updateUser">
+		<td>회원수정</td>
+		<td>traview/user/updateUser</td>
+		<td>POST</td>
+		<td>
+				userId : 'jihee'</td>
+		<td>	userPw : 'jihee'
+				userNm : '지희',
+				nickname : '지희',
+				birthday : '19960824',
+				gender : 'F',
+				email : 'jihee@test.com',
+				phone	: '01034785503'</td>
+	</tr>
+	<tr id="deleteUser">
+		<td>회원삭제</td>
+		<td>traview/user/deleteUser</td>
+		<td>POST</td>
+		<td>
+				userId : 'jihee'</td>
+		<td></td>
+	</tr>
+	<tr id="selectUser">
+		<td>회원정보, 미사용회원정보</td>
+		<td>traview/user/selectUser</td>
+		<td>POST</td>
+		<td>
+				userId : 'jihee',</td>
+		<td>	userPw : 'jihee'
+				useYn : 'Y'</td>
+	</tr>
+	<tr id="selectUserList">
+		<td>회원정보 리스트</td>
+		<td>traview/user/selectUserList</td>
+		<td>POST</td>
+		<td>
+				useYn : 'Y'</td>
+		<td></td>
+	</tr>
+</table>
 <script src="resources/js/user.js"></script>
 <br/>
-<textarea style="width: 35%; height: 50%;">	
+<!-- 사용자 //-->
+
+<!--// 게시판 -->
+<textarea>	
 	/* 게시글 고유번호 */
 	private int postSeq;
 	/* 게시글 분류ID */
@@ -68,12 +157,71 @@
 	/* 사용여부 */
 	private String useYn;
 </textarea>
-<button id="insertPost">post/insertPost</button>
-<button id="updatePost">post/updatePost</button>
-<button id="deletePost">post/deletePost</button>
-<button id="selectPost">post/selectPost</button>
-<button id="selectPostList">post/selectPostList</button><br/>
+<table>
+	<tr>
+		<th>사용</th>
+		<th>URL</th>
+		<th>DATA TYPE</th>
+		<th>DATA 필수</th>
+		<th>DATA 필수X</th>
+	</tr>
+	<tr id="insertPost">
+		<td>게시판등록</td>
+		<td>traview/post/insertPost</td>
+		<td>POST</td>
+		<td>
+				postInfoId : 0,
+				postTitle : '제목',
+				postContents : '내용',
+				postDescription : '',
+				isMain : 'Y',
+				createUser : 'jihee'</td>
+		<td></td>
+	</tr>
+	<tr id="updatePost">
+		<td>게시판수정</td>
+		<td>traview/post/updatePost</td>
+		<td>POST</td>
+		<td>
+				postSeq : 1</td>
+		<td>
+				postInfoId : 0,
+				postTitle : '제목1',
+				postContents : '내용1',
+				postDescription : '설명1',
+				isMain : 'Y',
+				useYn : 'Y',
+				updateUser : 'jihee'</td>
+	</tr>
+	<tr id="deletePost">
+		<td>게시판 삭제</td>
+		<td>traview/post/deletePost</td>
+		<td>POST</td>
+		<td>
+				postSeq : 2</td>
+		<td></td>
+	</tr>
+	<tr id="selectPost">
+		<td>게시판상세</td>
+		<td>traview/post/selectPost</td>
+		<td>POST</td>
+		<td>
+				postSeq : 1</td>
+		<td>	
+				useYn : 'Y'</td>
+	</tr>
+	<tr id="selectPostList">
+		<td>게시판리스트</td>
+		<td>traview/post/selectPostList</td>
+		<td>POST</td>
+		<td>
+				useYn : 'Y'</td>
+		<td></td>
+	</tr>
+</table>
 <script src="resources/js/post.js"></script>
+<br/>
+<!--// 게시판 -->
 
 
 </body>

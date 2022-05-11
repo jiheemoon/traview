@@ -74,6 +74,22 @@ public class UserController {
 	}
 
 	@ResponseBody 
+	@RequestMapping(value = "/user/deleteUser", method = RequestMethod.POST)
+	public ResultVO<UserVO> user_deleteUser(@RequestBody UserVO userVO, HttpServletRequest req, HttpServletResponse res) {
+
+		logger.info(userVO.toString());
+		ResultVO<UserVO> resultVO = new ResultVO<UserVO>();
+		try {
+			resultVO.setErrorCode(userService.deleteUser(userVO));
+		} catch (Exception e) {
+			e.printStackTrace();
+			resultVO.setErrorCode(-1);
+		}
+		
+		return resultVO;
+	}
+	
+	@ResponseBody 
 	@RequestMapping(value = "/user/selectUser", method = RequestMethod.POST)
 	public ResultVO<UserVO> user_selectUser(@RequestBody UserVO userVO, HttpServletRequest req, HttpServletResponse res) {
 
