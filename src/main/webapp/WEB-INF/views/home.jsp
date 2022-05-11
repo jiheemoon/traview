@@ -10,6 +10,7 @@
 	<title>Home</title>
 </head>
 <body>
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 
 <%-- <P>  The time on the server is ${serverTime}. </P> --%>
 <textarea style="width: 35%; height: 50%;">	
@@ -41,6 +42,7 @@
 <button id="updateUser">user/updateUser</button>
 <button id="selectUser">user/selectUser</button>
 <button id="selectUserList">user/selectUserList</button>
+<script src="resources/js/user.js"></script>
 <br/>
 <textarea style="width: 35%; height: 50%;">	
 	/* 게시글 고유번호 */
@@ -71,9 +73,6 @@
 <button id="deletePost">post/deletePost</button>
 <button id="selectPost">post/selectPost</button>
 <button id="selectPostList">post/selectPostList</button><br/>
-
-<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-<script src="resources/js/user.js"></script>
 <script src="resources/js/post.js"></script>
 
 

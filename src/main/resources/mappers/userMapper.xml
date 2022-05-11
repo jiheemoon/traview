@@ -55,7 +55,8 @@
 			GENDER AS gender,
 			EMAIL AS email,
 			PHONE AS phone,
-			CREATE_DATE AS createDate
+			CREATE_DATE AS createDate,
+			UPDATE_DATE AS updateDate
 		FROM USER 
 		WHERE USE_YN='Y'
 			AND USER_ID = #{userId}<if test="@common.Function@isNotEmpty(userPw)">
@@ -71,7 +72,8 @@
 			GENDER AS gender,
 			EMAIL AS email,
 			PHONE AS phone,
-			CREATE_DATE AS createDate
+			CREATE_DATE AS createDate,
+			UPDATE_DATE AS updateDate
 		FROM USER 
 		WHERE USE_YN='Y'
 	</select>

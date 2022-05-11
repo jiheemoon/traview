@@ -31,8 +31,8 @@
 	        dataType	: "json",
 	        contentType : "application/json",
 			data : JSON.stringify({
-				userId : 'g',
-				userPw : 'g',
+				userId : 'jihee',
+				userPw : 'jihee'
 			}),
 			success : function(a, b) {
 				console.log(a);
@@ -56,8 +56,10 @@
 	        dataType	: "json",
 	        contentType : "application/json",
 			data : JSON.stringify({
-				userId : 'g',
-				userNm : 'jihee',
+				userId : 'jihee',
+				userPw : 'jihee',
+				birthday : '19960824',
+				phone	: '01034785503'
 			}),
 			success : function(a, b) {
 				console.log(a);
@@ -81,7 +83,7 @@
 	        dataType	: "json",
 	        contentType : "application/json",
 			data : JSON.stringify({
-				userId : 'g',
+				userId : 'jihee'
 			}),
 			success : function(a, b) {
 				console.log(a);
@@ -105,7 +107,7 @@
 	        dataType	: "json",
 	        contentType : "application/json",
 			data : JSON.stringify({
-				userId : 'g',
+				userId : 'jihee',
 			}),
 			success : function(a, b) {
 				console.log(a);
