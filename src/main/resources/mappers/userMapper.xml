@@ -22,7 +22,7 @@
 			#{gender},
 			#{email},
 			#{phone},
-			CURRENT_TIMESTAMP
+			CURRENT_TIMESTAMP()
 		)
 	</insert>
 	
@@ -36,7 +36,7 @@
 			GENDER=#{gender},</if><if test="@common.Function@isNotEmpty(email)">
 			EMAIL=#{email},</if><if test="@common.Function@isNotEmpty(phone)">
 			PHONE=#{phone},</if>
-			UPDATE_DATE=CURRENT_TIMESTAMP
+			UPDATE_DATE=CURRENT_TIMESTAMP()
 		WHERE USER_ID=#{userId}
 	</update>
 	

@@ -13,10 +13,10 @@
     		font-size: x-small;
     	}
 		textarea {
-			width: 30%;height: 30%;float:right;
+			width: 25%;height: 18%;float:right;
 		}
 		table {
-			width: 70%;float:left;border: 1px solid gray;
+			width: 75%;float:left;border: 1px solid gray;
       	}
       	tr:hover {
 			border: 3px solid #878b93;
@@ -66,7 +66,7 @@
 	</tr>
 	<tr id="signUp">
 		<td>회원가입</td>
-		<td>traview/user/signUp</td>
+		<td>/user/signUp</td>
 		<td>POST</td>
 		<td>
 				userId : 'jihee',
@@ -81,7 +81,7 @@
 	</tr>
 	<tr id="signIn">
 		<td>로그인</td>
-		<td>traview/user/signIn</td>
+		<td>/user/signIn</td>
 		<td>POST</td>
 		<td>
 				userId : 'jihee',
@@ -90,7 +90,7 @@
 	</tr>
 	<tr id="updateUser">
 		<td>회원수정</td>
-		<td>traview/user/updateUser</td>
+		<td>/user/updateUser</td>
 		<td>POST</td>
 		<td>
 				userId : 'jihee'</td>
@@ -104,7 +104,7 @@
 	</tr>
 	<tr id="deleteUser">
 		<td>회원삭제</td>
-		<td>traview/user/deleteUser</td>
+		<td>/user/deleteUser</td>
 		<td>POST</td>
 		<td>
 				userId : 'jihee'</td>
@@ -112,7 +112,7 @@
 	</tr>
 	<tr id="selectUser">
 		<td>회원정보, 미사용회원정보</td>
-		<td>traview/user/selectUser</td>
+		<td>/user/selectUser</td>
 		<td>POST</td>
 		<td>
 				userId : 'jihee',</td>
@@ -121,7 +121,7 @@
 	</tr>
 	<tr id="selectUserList">
 		<td>회원정보 리스트</td>
-		<td>traview/user/selectUserList</td>
+		<td>/user/selectUserList</td>
 		<td>POST</td>
 		<td>
 				useYn : 'Y'</td>
@@ -167,7 +167,7 @@
 	</tr>
 	<tr id="insertPost">
 		<td>게시판등록</td>
-		<td>traview/post/insertPost</td>
+		<td>/post/insertPost</td>
 		<td>POST</td>
 		<td>
 				postInfoId : 0,
@@ -180,7 +180,7 @@
 	</tr>
 	<tr id="updatePost">
 		<td>게시판수정</td>
-		<td>traview/post/updatePost</td>
+		<td>/post/updatePost</td>
 		<td>POST</td>
 		<td>
 				postSeq : 1</td>
@@ -195,7 +195,7 @@
 	</tr>
 	<tr id="deletePost">
 		<td>게시판 삭제</td>
-		<td>traview/post/deletePost</td>
+		<td>/post/deletePost</td>
 		<td>POST</td>
 		<td>
 				postSeq : 2</td>
@@ -203,7 +203,7 @@
 	</tr>
 	<tr id="selectPost">
 		<td>게시판상세</td>
-		<td>traview/post/selectPost</td>
+		<td>/post/selectPost</td>
 		<td>POST</td>
 		<td>
 				postSeq : 1</td>
@@ -212,7 +212,7 @@
 	</tr>
 	<tr id="selectPostList">
 		<td>게시판리스트</td>
-		<td>traview/post/selectPostList</td>
+		<td>/post/selectPostList</td>
 		<td>POST</td>
 		<td>
 				useYn : 'Y'</td>

@@ -20,7 +20,7 @@
 			#{postContents},
 			#{postDescription},
 			#{isMain},
-			CURRENT_TIMESTAMP,
+			CURRENT_TIMESTAMP(),
 			#{createUser},
 			'Y')
 	</insert>
@@ -34,7 +34,7 @@
 			POST_DESCRIPTION=#{postDescription},</if><if test="@common.Function@isNotEmpty(isMain)">
 			IS_MAIN=#{isMain},</if><if test="@common.Function@isNotEmpty(useYn)">
 			USE_YN=#{useYn},</if>
-			UPDATE_DATE=CURRENT_TIMESTAMP,
+			UPDATE_DATE=CURRENT_TIMESTAMP(),
 			UPDATE_USER=#{updateUser}
 		WHERE POST_SEQ=#{postSeq}
 	</update>

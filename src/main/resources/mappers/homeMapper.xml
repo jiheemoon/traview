@@ -3,7 +3,7 @@
 <mapper namespace="com.traview.home">
 
 	<select id="selectTime" resultType="string"> /* selectTime homeMapper.xml */
-		SELECT DATE_FORMAT( now() , '%Y-%m-%d' )
+<!-- 		SELECT DATE_FORMAT( now() , '%Y-%m-%d' ) -->
 	</select>
 
 </mapper>
