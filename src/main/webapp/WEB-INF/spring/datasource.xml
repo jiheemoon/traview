@@ -13,10 +13,10 @@
 	<context:property-placeholder location="classpath:config/database.properties"/>
 
     <bean id="dataSource" class="org.springframework.jdbc.datasource.SimpleDriverDataSource">
-        <property name="driverClass" value="${mysql.driverClass}"/>
-        <property name="url" value="${mysql.url}"/>
-        <property name="username" value="${mysql.username}"/>
-        <property name="password" value="${mysql.password}"/>
+        <property name="driverClass" value="${dbcon.driverClass}"/>
+        <property name="url" value="${dbcon.url}"/>
+        <property name="username" value="${dbcon.username}"/>
+        <property name="password" value="${dbcon.password}"/>
     </bean> 
  
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
